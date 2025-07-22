@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Marketing Mate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #f9f9f9;
+      color: #222;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: white;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 24px;
+      font-weight: 800;
+      color: #003366;
+    }
+    nav a {
+      margin-left: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      color: #003366;
+    }
+    .hero {
+      text-align: center;
+      padding: 60px 20px 40px;
+    }
+    .hero h1 {
+      font-size: 36px;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+    .hero button {
+      background-color: #0056b3;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      padding: 40px;
+    }
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .card-text {
+      padding: 20px;
+      text-align: center;
+    }
+    .card-text h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .card-text a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #003366;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    @media(max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><img src="./logo-mm.png" alt="My Marketing Mate Logo" style="height:40px;" /></div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#websites">Websites</a>
+      <a href="#sns">SNS</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+  <section class="hero" id="home">
+    <h1>Professional Websites for Small Businesses</h1>
+    <button>View Our Work</button>
+  </section>
+  <section class="grid" id="websites">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=800&q=80" alt="Coffee Shop" />
+      <div class="card-text">
+        <h3>Coffee Shop</h3>
+        <a href="#">View Now</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1600573472552-8f62b159c16c?auto=format&fit=crop&w=800&q=80" alt="Plumber" />
+      <div class="card-text">
+        <h3>Plumbing Services</h3>
+        <a href="#">Our Services</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1582095133179-2987eecfa9ca?auto=format&fit=crop&w=800&q=80" alt="Hair Salon" />
+      <div class="card-text">
+        <h3>Hair Salon</h3>
+        <a href="#">Book Now</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1554284126-aa88f22d8b74?auto=format&fit=crop&w=800&q=80" alt="Fitness Center" />
+      <div class="card-text">
+        <h3>Fitness Center</h3>
+        <a href="#">Get Started</a>
+      </div>
+    </div>
+  </section>
+  <section id="sns" style="padding:60px 40px; text-align:center;">
+    <h2>Social Media Content Samples</h2>
+    <p>Check out some of the engaging content we create for your business SNS channels:</p>
+    <div class="grid">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1606851091970-9c1f6e2e8c3c?auto=format&fit=crop&w=800&q=80" alt="Social Post 1" />
+        <div class="card-text">
+          <h3>Product Highlight</h3>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1601979031925-6f3aa5d00b77?auto=format&fit=crop&w=800&q=80" alt="Social Post 2" />
+        <div class="card-text">
+          <h3>Customer Testimonial</h3>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1610396117849-b01c02d13a08?auto=format&fit=crop&w=800&q=80" alt="Social Post 3" />
+        <div class="card-text">
+          <h3>Behind the Scenes</h3>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1631270543711-92cc5400d778?auto=format&fit=crop&w=800&q=80" alt="Social Post 4" />
+        <div class="card-text">
+          <h3>Promotions & Events</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contact" style="padding:60px 40px; text-align:center;">
+    <h2>Contact Us</h2>
+    <p>Email: info@mymarketingmate.com | Phone: +61 400 000 000</p>
+  </section>
+</body>
+</html>
