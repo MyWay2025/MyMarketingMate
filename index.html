@@ -22,7 +22,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 5px 40px;
+      padding: 10px 30px;
       background-color: white;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     }
@@ -69,11 +69,17 @@
       border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: scale(1.02);
     }
     .card img {
       width: 100%;
       height: 200px;
       object-fit: cover;
+      transition: transform 0.3s ease;
     }
     .card-text {
       padding: 20px;
@@ -93,6 +99,35 @@
       text-decoration: none;
       font-weight: 600;
     }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+    }
+    .modal-content {
+      margin: 5% auto;
+      display: block;
+      max-width: 90%;
+    }
+    .modal-content img {
+      width: 100%;
+      height: auto;
+    }
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
     @media(max-width: 768px) {
       header {
         flex-direction: column;
@@ -107,10 +142,7 @@
 <body>
   <header>
     <div class="logo">
-     <img 
-  src="https://myway2025.github.io/MyMarketingMate/images/logo-mm.png" 
-  alt="My Marketing Mate Logo" 
-  style="max-height: 100px; width: auto;" />
+      <img src="https://myway2025.github.io/MyMarketingMate/images/logo-mm.png" alt="My Marketing Mate Logo" style="max-height: 80px; width: auto;" />
     </div>
     <nav>
       <a href="#home">Home</a>
@@ -125,28 +157,28 @@
   </section>
   <section class="grid" id="websites">
     <div class="card">
-      <img src="https://myway2025.github.io/MyMarketingMate/images/coffee.jpg" alt="Coffee Shop" />
+      <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=800&q=80" alt="Coffee Shop" />
       <div class="card-text">
         <h3>Coffee Shop</h3>
         <a href="#">View Now</a>
       </div>
     </div>
     <div class="card">
-      <img src="https://myway2025.github.io/MyMarketingMate/images/plumber.jpg" alt="Plumber" />
+      <img src="https://images.unsplash.com/photo-1600573472552-8f62b159c16c?auto=format&fit=crop&w=800&q=80" alt="Plumber" />
       <div class="card-text">
         <h3>Plumbing Services</h3>
         <a href="#">Our Services</a>
       </div>
     </div>
     <div class="card">
-      <img src="https://myway2025.github.io/MyMarketingMate/images/salon.jpg" alt="Hair Salon" />
+      <img src="https://images.unsplash.com/photo-1582095133179-2987eecfa9ca?auto=format&fit=crop&w=800&q=80" alt="Hair Salon" />
       <div class="card-text">
         <h3>Hair Salon</h3>
         <a href="#">Book Now</a>
       </div>
     </div>
     <div class="card">
-      <img src="https://myway2025.github.io/MyMarketingMate/images/fitness.jpg" alt="Fitness Center" />
+      <img src="https://images.unsplash.com/photo-1554284126-aa88f22d8b74?auto=format&fit=crop&w=800&q=80" alt="Fitness Center" />
       <div class="card-text">
         <h3>Fitness Center</h3>
         <a href="#">Get Started</a>
@@ -157,26 +189,26 @@
     <h2>Social Media Content Samples</h2>
     <p>Check out some of the engaging content we create for your business SNS channels:</p>
     <div class="grid">
-      <div class="card">
-        <img src="https://myway2025.github.io/MyMarketingMate/images/sns1.jpg" alt="Social Post 1" />
+      <div class="card" onclick="enlarge(this)">
+        <img src="https://images.unsplash.com/photo-1606851091970-9c1f6e2e8c3c?auto=format&fit=crop&w=800&q=80" alt="Social Post 1" />
         <div class="card-text">
           <h3>Product Highlight</h3>
         </div>
       </div>
-      <div class="card">
-        <img src="https://myway2025.github.io/MyMarketingMate/images/sns2.jpg" alt="Social Post 2" />
+      <div class="card" onclick="enlarge(this)">
+        <img src="https://images.unsplash.com/photo-1601979031925-6f3aa5d00b77?auto=format&fit=crop&w=800&q=80" alt="Social Post 2" />
         <div class="card-text">
           <h3>Customer Testimonial</h3>
         </div>
       </div>
-      <div class="card">
-        <img src="https://myway2025.github.io/MyMarketingMate/images/sns3.jpg" alt="Social Post 3" />
+      <div class="card" onclick="enlarge(this)">
+        <img src="https://images.unsplash.com/photo-1610396117849-b01c02d13a08?auto=format&fit=crop&w=800&q=80" alt="Social Post 3" />
         <div class="card-text">
           <h3>Behind the Scenes</h3>
         </div>
       </div>
-      <div class="card">
-        <img src="https://myway2025.github.io/MyMarketingMate/images/sns4.jpg" alt="Social Post 4" />
+      <div class="card" onclick="enlarge(this)">
+        <img src="https://images.unsplash.com/photo-1631270543711-92cc5400d778?auto=format&fit=crop&w=800&q=80" alt="Social Post 4" />
         <div class="card-text">
           <h3>Promotions & Events</h3>
         </div>
@@ -187,5 +219,25 @@
     <h2>Contact Us</h2>
     <p>Email: info@mymarketingmate.com | Phone: +61 400 000 000</p>
   </section>
+
+  <div id="modal" class="modal" onclick="this.style.display='none'">
+    <span class="close">&times;</span>
+    <div class="modal-content">
+      <img id="modalImage" src="" alt="" />
+    </div>
+  </div>
+
+  <script>
+    function enlarge(card) {
+      var modal = document.getElementById("modal");
+      var modalImg = document.getElementById("modalImage");
+      var img = card.querySelector("img");
+      modal.style.display = "block";
+      modalImg.src = img.src;
+    }
+    document.querySelector(".close").onclick = function() {
+      document.getElementById("modal").style.display = "none";
+    }
+  </script>
 </body>
 </html>
