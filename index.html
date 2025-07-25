@@ -313,6 +313,13 @@
     </div>
   </div>
 
+  <div id="modal" class="modal" onclick="this.style.display='none'">
+    <span class="close">&times;</span>
+    <div class="modal-content">
+      <img id="modalImage" src="" alt="" />
+    </div>
+  </div>
+
   <script>
     function enlarge(image) {
       var modal = document.getElementById("modal");
@@ -320,9 +327,17 @@
       modal.style.display = "block";
       modalImg.src = image.src;
     }
-    document.querySelector(".close").onclick = function() {
+    document.querySelector(".close").onclick = function () {
       document.getElementById("modal").style.display = "none";
     }
+    window.addEventListener("scroll", function () {
+      const header = document.querySelector("header");
+      if (window.scrollY > 50) {
+        header.classList.add("shrink");
+      } else {
+        header.classList.remove("shrink");
+      }
+    });
   </script>
 </body>
 </html>
