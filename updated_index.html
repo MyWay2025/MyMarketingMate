@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Marketing Mate</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    /*
+      Base styles for the marketing site.
+
+      The original markup duplicated the header and body tags which caused
+      invalid HTML and unpredictable rendering. This version consolidates
+      everything into a single body tag and ensures only one header is
+      rendered. Cards now link to the actual sample sites (located in
+      the `sample-sites` directory) so that clicking “View Now” opens the
+      appropriate demo instead of a placeholder `#` link. The colour
+      palette and typography remain unchanged from the original design.
+    */
+    * {
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #f9f9f9;
+      color: #222;
+      padding-top: 100px;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 30px;
+      background-color: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      backdrop-filter: blur(8px);
+    }
+    header.shrink {
+      padding: 10px 30px;
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 24px;
+      font-weight: 800;
+      color: #003366;
+    }
+    nav a {
+      margin-left: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      color: #003366;
+    }
+    .hero {
+      text-align: center;
+      padding: 60px 20px 40px;
+    }
+    .hero h1 {
+      font-size: 36px;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+    .hero button {
+      background-color: #0056b3;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      padding: 40px;
+    }
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: scale(1.02);
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .card-text {
+      padding: 20px;
+      text-align: center;
+    }
+    .card-text h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .card-text a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #003366;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+    }
+    .modal-content {
+      margin: 5% auto;
+      display: block;
+      max-width: 90%;
+    }
+    .modal-content img {
+      width: 100%;
+      height: auto;
+    }
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    @media(max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Primary navigation and branding -->
+  <header>
+    <div class="logo">
+      <img src="https://myway2025.github.io/MyMarketingMate/images/logo-mm.png" alt="My Marketing Mate Logo" style="max-height: 80px; width: auto;" />
+    </div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#websites">Websites</a>
+      <a href="#sns">SNS</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero section -->
+  <section class="hero" id="home">
+    <h1>Professional Websites &amp; SNS Contents for Small Businesses</h1>
+  </section>
+
+  <!-- Website samples grid -->
+  <section class="grid" id="websites">
+    <div class="card">
+      <img src="https://myway2025.github.io/MyMarketingMate/images/coffee.jpg" alt="Retail" />
+      <div class="card-text">
+        <h3>Retail</h3>
+        <!-- Link updated to point at the new Retail demo site -->
+        <a href="sample-sites/retail/index.html">View Now</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://myway2025.github.io/MyMarketingMate/images/plumber.jpg" alt="Tradies" />
+      <div class="card-text">
+        <h3>Tradies</h3>
+        <!-- Link updated to point at the new Tradies demo site -->
+        <a href="sample-sites/tradies/index.html">View Now</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://myway2025.github.io/MyMarketingMate/images/professional.jpg" alt="Professional" />
+      <div class="card-text">
+        <h3>Professional</h3>
+        <!-- Link updated to point at the existing Professional demo site -->
+        <a href="sample-sites/professional/index.html">View Now</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://myway2025.github.io/MyMarketingMate/images/fitness.jpg" alt="Fitness Center" />
+      <div class="card-text">
+        <h3>Fitness Center</h3>
+        <!-- Link updated to point at the existing Fitness demo site -->
+        <a href="sample-sites/fitness/index.html">View Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing for website builds -->
+  <section id="web-pricing" style="padding: 60px 20px; text-align: center;">
+    <div style="max-width: 800px; margin: 0 auto; background-color: #ffffff; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); padding: 40px;">
+      <h2 style="font-size: 28px; color: #003366; margin-bottom: 10px;">Website Build Package</h2>
+      <p style="font-size: 24px; font-weight: 800; color: #0070c0; margin-bottom: 20px;">A$995.00</p>
+      <p style="font-size: 16px; line-height: 1.6;">
+        We offer affordable website builds using our existing layouts featured above. <br />
+        You can personalize with your logo, brand colors, and content (text and images).
+      </p>
+      <hr style="margin: 30px 0; border: none; border-top: 1px solid #eee;" />
+      <p style="font-size: 16px; font-weight: 600; color: #222;">
+        Looking for a premium solution like an e-commerce store or custom functionality?
+      </p>
+      <p style="font-size: 16px;">Please <a href="#contact" style="color: #0056b3; text-decoration: underline;">contact us</a> for a tailored quote.</p>
+    </div>
+  </section>
+
+  <!-- SNS samples -->
+  <section id="sns" style="padding:60px 40px; text-align:center;">
+    <h2>Social Media Content Samples</h2>
+    <p>Check out some of the engaging content we create for your business SNS channels:</p>
+    <div class="grid">
+      <div class="card" onclick="enlarge(this.querySelector('img'))">
+        <img src="https://myway2025.github.io/MyMarketingMate/images/sns1.jpg" alt="Social Post 1" />
+        <div class="card-text">
+          <h3>Product Highlight</h3>
+        </div>
+      </div>
+      <div class="card" onclick="enlarge(this.querySelector('img'))">
+        <img src="https://myway2025.github.io/MyMarketingMate/images/sns2.jpg" alt="Social Post 2" />
+        <div class="card-text">
+          <h3>Customer Testimonial</h3>
+        </div>
+      </div>
+      <div class="card" onclick="enlarge(this.querySelector('img'))">
+        <img src="https://myway2025.github.io/MyMarketingMate/images/sns3.jpg" alt="Social Post 3" />
+        <div class="card-text">
+          <h3>Behind the Scenes</h3>
+        </div>
+      </div>
+      <div class="card" onclick="enlarge(this.querySelector('img'))">
+        <img src="https://myway2025.github.io/MyMarketingMate/images/sns4.jpg" alt="Social Post 4" />
+        <div class="card-text">
+          <h3>Promotions &amp; Events</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- SNS pricing table -->
+    <section id="sns-pricing" style="padding:40px 40px; text-align:center;">
+      <h2>SNS Management Plans</h2>
+      <p>Choose the plan that fits your business needs</p>
+      <div style="overflow-x:auto;">
+        <table style="margin: 30px auto; border-collapse: collapse; width: 90%; max-width: 800px; font-size: 16px;">
+          <thead style="background-color: #003366; color: white;">
+            <tr>
+              <th style="padding: 12px; border: 1px solid #ccc;">Package</th>
+              <th style="padding: 12px; border: 1px solid #ccc;">Starter</th>
+              <th style="padding: 12px; border: 1px solid #ccc;">Growth</th>
+              <th style="padding: 12px; border: 1px solid #ccc;">Pro</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding: 12px; border: 1px solid #ccc;">Monthly Fee</td>
+              <td style="padding: 12px; border: 1px solid #ccc;">A$250</td>
+              <td style="padding: 12px; border: 1px solid #ccc;">A$450</td>
+              <td style="padding: 12px; border: 1px solid #ccc;">A$750</td>
+            </tr>
+            <tr>
+              <td style="padding: 12px; border: 1px solid #ccc;">No. of Posts</td>
+              <td style="padding: 12px; border: 1px solid #ccc;">4</td>
+              <td style="padding: 12px; border: 1px solid #ccc;">8</td>
+              <td style="padding: 12px; border: 1px solid #ccc;">16</td>
+            </tr>
+            <tr>
+              <td style="padding: 12px; border: 1px solid #ccc;">Story Designs</td>
+              <td style="padding: 12px; border: 1px solid #ccc;">❌</td>
+              <td style="padding: 12px; border: 1px solid #ccc;">2</td>
+              <td style="padding: 12px; border: 1px solid #ccc;">4</td>
+            </tr>
+            <tr>
+              <td style="padding: 12px; border: 1px solid #ccc;">Review Content</td>
+              <td style="padding: 12px; border: 1px solid #ccc;">❌</td>
+              <td style="padding: 12px; border: 1px solid #ccc;">1</td>
+              <td style="padding: 12px; border: 1px solid #ccc;">2</td>
+            </tr>
+            <tr>
+              <td style="padding: 12px; border: 1px solid #ccc;">Report</td>
+              <td style="padding: 12px; border: 1px solid #ccc;">✅</td>
+              <td style="padding: 12px; border: 1px solid #ccc;">✅ (with analysis)</td>
+              <td style="padding: 12px; border: 1px solid #ccc;">✅ (with consultation)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </section>
+
+  <!-- Contact section -->
+  <section id="contact" style="padding:60px 40px; text-align:center;">
+    <h2>Contact Us</h2>
+    <p>Email: info@mymarketingmate.com | Phone: +61 400 000 000</p>
+  </section>
+
+  <!-- Image modal for SNS gallery -->
+  <div id="modal" class="modal" onclick="this.style.display='none'">
+    <span class="close">&times;</span>
+    <div class="modal-content">
+      <img id="modalImage" src="" alt="" />
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // Enlarge SNS images in a modal
+    function enlarge(image) {
+      var modal = document.getElementById("modal");
+      var modalImg = document.getElementById("modalImage");
+      modal.style.display = "block";
+      modalImg.src = image.src;
+    }
+    document.querySelector(".close").onclick = function () {
+      document.getElementById("modal").style.display = "none";
+    }
+    // Shrink header when scrolling
+    window.addEventListener("scroll", function () {
+      const header = document.querySelector("header");
+      if (window.scrollY > 50) {
+        header.classList.add("shrink");
+      } else {
+        header.classList.remove("shrink");
+      }
+    });
+  </script>
+</body>
+</html>
