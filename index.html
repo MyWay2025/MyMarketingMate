@@ -219,20 +219,81 @@
   </section>
 
   <!-- Pricing for website builds -->
-  <section id="web-pricing" style="padding: 60px 20px; text-align: center;">
-   <div class="package-card">
+<style>
+  .package-card {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 40px 30px;
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    text-align: center;
+  }
+
+  .package-card h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: #062f4f;
+  }
+
+  .package-card .price {
+    font-size: 2.4rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+
+  .package-card .price del {
+    font-size: 1.5rem;
+    color: #888;
+    margin-right: 10px;
+  }
+
+  .package-card .price .discounted {
+    color: #007BFF;
+    font-weight: 700;
+  }
+
+  .package-card p.description {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .package-card a.contact-link {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color .3s ease;
+  }
+
+  .package-card a.contact-link:hover {
+    background-color: #0056b3;
+  }
+</style>
+
+<div class="package-card">
   <h2>Website Build Package</h2>
-  <p class="price">
-    <span style="text-decoration: line-through; color: #888;">A$995.00</span>
-    <span style="font-weight: bold; color: #007BFF; margin-left: 0.5rem;">A$695.00</span>
-  </p>
+  <div class="price">
+    <del>A$995.00</del>
+    <span class="discounted">A$695.00</span>
+  </div>
   <p class="description">
     We offer affordable website builds using our existing layouts featured above.
     You can personalize with your logo, brand colors, and content (text and images).
     Excluding hosting, domain name and SSL.
   </p>
+  <p class="description">
+    <strong>Looking for a premium solution like an e‑commerce store or custom functionality?</strong>
+  </p>
+  <a href="#contact" class="contact-link">Contact us for a tailored quote</a>
 </div>
-  </section>
 
   <!-- SNS samples -->
   <section id="sns" style="padding:60px 40px; text-align:center;">
@@ -364,33 +425,6 @@
       }
     });
   </script>
-
-  <!-- 문의 접수 폼 시작 -->
-<div style="border: 1px solid black; padding: 20px; max-width: 500px; margin: 0 auto; style="padding:40px 40px; text-align:center;">
-  <form action="mailto:mymarketingmate2025@gmail.com" method="post" enctype="text/plain">
-    <h2>Contact Us</h2>
-
-    <label for="businessName">Business Name</label><br>
-    <input type="text" id="businessName" name="Business Name" required style="width:100%; padding:8px; margin-bottom:12px;">
-
-    <label for="contactNumber">Contact Number</label><br>
-    <input type="tel" id="contactNumber" name="Contact Number" required style="width:100%; padding:8px; margin-bottom:12px;">
-
-    <label for="address">Address</label><br>
-    <input type="text" id="address" name="Address" required style="width:100%; padding:8px; margin-bottom:12px;">
-
-    <label for="service">Service Required</label><br>
-    <select id="service" name="Service Required" style="width:100%; padding:8px; margin-bottom:12px;">
-      <option value="Web Design">Web Design</option>
-      <option value="Social Media">Social Media</option>
-      <option value="Both">Both</option>
-    </select>
-
-    <input type="submit" value="Submit" style="background-color:#007BFF; color:white; padding:10px 20px; border:none; cursor:pointer;">
-  </form>
-</div>
-<!-- 문의 접수 폼 끝 -->
-
 
   <section id="contact" class="Emurra Pty Ltd" style="padding:30px 20px; text-align:center;">
   <h2 style="font-size: 12px; color: #003366;"> Copyright © Emurra Pty Ltd All rights reserved.</h2>
