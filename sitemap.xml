@@ -1,34 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
   <url>
     <loc>https://www.mymarketingmate.com.au/</loc>
     <lastmod>2025-08-03</lastmod>
     <priority>1.0</priority>
   </url>
+</urlset>
 
   <url>
-    <loc>https://www.mymarketingmate.com.au/#about</loc>
+    <loc>https://www.mymarketingmate.com.au/about</loc>
     <lastmod>2025-08-03</lastmod>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.mymarketingmate.com.au/#services</loc>
+    <loc>https://www.mymarketingmate.com.au/services</loc>
     <lastmod>2025-08-03</lastmod>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.mymarketingmate.com.au/#portfolio</loc>
+    <loc>https://www.mymarketingmate.com.au/portfolio</loc>
     <lastmod>2025-08-03</lastmod>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://www.mymarketingmate.com.au/#contact</loc>
+    <loc>https://www.mymarketingmate.com.au/contact</loc>
     <lastmod>2025-08-03</lastmod>
     <priority>0.7</priority>
   </url>
 
 </urlset>
+
